@@ -1,12 +1,15 @@
 <script setup>
-  import { ref } from 'vue'
+import { ref } from 'vue'
 
-  const text = ref(0)
+const awesome = ref(true)
 
+function toggle() {
+awesome.value = !awesome.value
+}
 </script>
 
 <template>
-  <input v-model="text" placeholder="Type here"></input>
-  <p>{{ text }}</p>
+  <button @click="toggle">Toggle</button>
+  <h1 v-if="awesome">Vue is awesome!</h1>
+  <h1 v-else>Oh no 😢</h1>
 </template>
-
