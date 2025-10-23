@@ -1,14 +1,12 @@
 <script setup>
   import { ref } from 'vue'
 
-  const count = ref(0)
+  const text = ref(0)
 
-  function increment() {
-    count.value++
-  }
 </script>
 
 <template>
-  <button @click="increment">Count is: {{count}}</button>
+  <input v-model="text" placeholder="Type here"></input>
+  <p>{{ text }}</p>
 </template>
 
