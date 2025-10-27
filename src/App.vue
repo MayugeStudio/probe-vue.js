@@ -1,15 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-const awesome = ref(true)
+const pElementRef = ref(null)
 
-function toggle() {
-awesome.value = !awesome.value
-}
+onMounted(() => {
+  pElementRef.value.textContent = "World"
+})
+
 </script>
 
 <template>
-  <button @click="toggle">Toggle</button>
-  <h1 v-if="awesome">Vue is awesome!</h1>
-  <h1 v-else>Oh no 😢</h1>
+  <p ref="pElementRef">Hello</p>
 </template>
